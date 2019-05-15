@@ -9,10 +9,6 @@ class Api::V1::GroupEventsController < ApplicationController
     render json: GroupEvent.find(params[:id]) 
   end
   
-  def new 
-    @group_event = GroupEvent.new                
-  end
-  
   def create
     event_params = check_params(group_event_params)
     event = GroupEvent.create(event_params)
